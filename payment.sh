@@ -22,5 +22,7 @@ pip3.6 install -r requirements.txt
 echo -e "\e[32m<<<<<<<<<<<< copy payment service >>>>>>>>>>>>>>\e[0m"
 cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service
 systemctl daemon-reload
+
+echo -e "\e[32m<<<<<<<<<<<<< start payment service >>>>>>>>>>>>\e[0m"
 systemctl enable payment
 systemctl restart payment
