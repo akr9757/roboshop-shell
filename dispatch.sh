@@ -21,7 +21,7 @@ go mod init dispatch
 go get
 go build
 
-echo -e"\e[32m<<<<<<<<<<<<<<< copy dispatch service >>>>>>>>>>>>\e[0m"
+echo -e "\e[32m<<<<<<<<<<<<<<< copy dispatch service >>>>>>>>>>>>\e[0m"
 cp /home/centos/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service
 systemctl daemon-reload
 
