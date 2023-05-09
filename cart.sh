@@ -24,6 +24,7 @@ unzip /tmp/cart.zip
 cd /app
 
 echo -e "\e[32m<<<<<<<<<<<<< install dependencies >>>>>>>>>>>>\e[0m"
+cd /app
 npm install
 
 echo -e "\e[32m<<<<<<<<<<<< copy cart service >>>>>>>>>>>\e[0m"
