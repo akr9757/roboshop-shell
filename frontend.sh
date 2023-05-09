@@ -1,3 +1,5 @@
+source common.sh
+
 echo -e "\e[32m<<<<<<<<< install nginx >>>>>>>>>>\e[0m"
 yum install nginx -y
 

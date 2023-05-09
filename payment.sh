@@ -1,8 +1,10 @@
+source common.sh
+
 echo -e "\e[32m<<<<<<<<<<<<< install python >>>>>>>>>>>\e[0m"
 yum install python36 gcc python3-devel -y
 
 echo -e "\e[32m<<<<<<<<<<<<< add application user >>>>>>>>>>>\e[0m"
-useradd roboshop
+useradd ${app-user}
 
 echo -e "\e[32m<<<<<<<<<<<<< create app directory >>>>>>>>>>>\e[0m"
 rm -rf /app
@@ -16,7 +18,6 @@ cd /app
 unzip /tmp/payment.zip
 
 echo -e "\e[32m<<<<<<<<<<<<< install dependencies >>>>>>>>>>>\e[0m"
-cd /app
 pip3.6 install -r requirements.txt
 
 echo -e "\e[32m<<<<<<<<<<<<< copy payment service >>>>>>>>>>>\e[0m"
