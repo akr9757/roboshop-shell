@@ -1,1 +1,1 @@
-appp-user=roboshop
+app-user=roboshop

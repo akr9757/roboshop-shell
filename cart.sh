@@ -1,4 +1,6 @@
-
+script=$(realpath "$0")
+script-path=$(dirname "$script")
+source ${script-path}/common.sh
 
 echo -e "\e[32m<<<<<<<<<<<<< download nodejs repos >>>>>>>>>>>\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
@@ -7,7 +9,7 @@ echo -e "\e[32m<<<<<<<<<< install nodejs >>>>>>>>>>\e[0m"
 yum install nodejs -y
 
 echo -e "\e[32m<<<<<<<<<<<<<<< add application user >>>>>>>>>>>\e[0m"
-useradd ${appp-user}
+useradd ${app-user}
 
 echo -e "\e[32m<<<<<<<<<<<<< create app directory >>>>>>>>>>>>\e[0m"
 rm -rf /app
