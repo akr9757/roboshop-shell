@@ -1,10 +1,12 @@
-source common.sh
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
 
 echo -e "\e[32m<<<<<<<<<<< install golang >>>>>>>>>>\e[0m"
 yum install golang -y
 
 echo -e "\e[32m<<<<<<<<<<<< add application user >>>>>>>>>>>>\e[0m"
-useradd ${app-user}
+useradd ${app_user}
 
 echo -e "\e[32m<<<<<<<<<<< create app directory >>>>>>>>>\e[0m"
 rm -rf /app
@@ -24,7 +26,7 @@ go get
 go build
 
 echo -e "\e[32m<<<<<<<<<<<<<<< copy dispatch service >>>>>>>>>>>>\e[0m"
-cp /home/centos/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service
+cp $script_path/dispatch.service /etc/systemd/system/dispatch.service
 systemctl daemon-reload
 
 echo -e "\e[32m<<<<<<<<<<< start dispatch service >>>>>>>>\e[0m"

@@ -1,4 +1,7 @@
-source common.sh
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
+
 
 echo -e "\e[32m<<<<<<<<< install nginx >>>>>>>>>>\e[0m"
 yum install nginx -y

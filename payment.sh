@@ -1,10 +1,13 @@
-source common.sh
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
+
 
 echo -e "\e[32m<<<<<<<<<<<<< install python >>>>>>>>>>>\e[0m"
 yum install python36 gcc python3-devel -y
 
 echo -e "\e[32m<<<<<<<<<<<<< add application user >>>>>>>>>>>\e[0m"
-useradd ${app-user}
+useradd ${app_user}
 
 echo -e "\e[32m<<<<<<<<<<<<< create app directory >>>>>>>>>>>\e[0m"
 rm -rf /app
@@ -21,7 +24,7 @@ echo -e "\e[32m<<<<<<<<<<<<< install dependencies >>>>>>>>>>>\e[0m"
 pip3.6 install -r requirements.txt
 
 echo -e "\e[32m<<<<<<<<<<<<< copy payment service >>>>>>>>>>>\e[0m"
-cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service
+cp $script_path/payment.service /etc/systemd/system/payment.service
 
 echo -e "\e[32m<<<<<<<<<<<<< load payment service >>>>>>>>>>>\e[0m"
 systemctl daemon-reload
