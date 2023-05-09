@@ -4,7 +4,7 @@ echo -e "\e[32m<<<<<<<<<<< install golang >>>>>>>>>>\e[0m"
 yum install golang -y
 
 echo -e "\e[32m<<<<<<<<<<<< add application user >>>>>>>>>>>>\e[0m"
-useradd ${app-user}
+useradd ${appp-user}
 
 echo -e "\e[32m<<<<<<<<<<< create app directory >>>>>>>>>\e[0m"
 rm -rf /app
