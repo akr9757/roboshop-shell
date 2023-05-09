@@ -27,7 +27,7 @@ echo -e "\e[32m<<<<<<<<<<<<< install dependencies >>>>>>>>>>>>\e[0m"
 npm install
 
 echo -e "\e[32m<<<<<<<<<<<< copy cart service >>>>>>>>>>>\e[0m"
-cp /home/centos/roboshop-shell/cart.service /etc/systemd/system/cart.service
+cp ${script-path}/cart.service /etc/systemd/system/cart.service
 systemctl daemon-reload
 systemctl enable cart
 systemctl restart cart
