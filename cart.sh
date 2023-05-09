@@ -1,6 +1,4 @@
 script=$(realpath "$0")
-realpath $0
-exit
 script-path=$(dirname "$script")
 source ${script-path}/common.sh
 
