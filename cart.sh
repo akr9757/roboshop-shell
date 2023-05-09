@@ -1,5 +1,5 @@
 script=$(realpath "$0")
-echo dirname $0
+echo $0
 exit
 script-path=$(dirname "$script")
 source ${script-path}/common.sh
