@@ -26,7 +26,7 @@ go get
 go build
 
 echo -e "\e[32m<<<<<<<<<<<<<<< copy dispatch service >>>>>>>>>>>>\e[0m"
-cp $script_path/dispatch.service /etc/systemd/system/dispatch.service
+cp ${script_path}/dispatch.service /etc/systemd/system/dispatch.service
 systemctl daemon-reload
 
 echo -e "\e[32m<<<<<<<<<<< start dispatch service >>>>>>>>\e[0m"

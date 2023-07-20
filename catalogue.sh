@@ -28,7 +28,7 @@ echo -e "\e[32m<<<<<<<<<<<<<< install app dependinces >>>>>>>>>>>\e[0m"
 npm install
 
 echo -e "\e[32m<<<<<<<<<<<<<< copy catalogue service >>>>>>>>>>>\e[0m"
-cp $script_path/catalogue.service /etc/systemd/system/catalogue.service
+cp ${script_path}/catalogue.service /etc/systemd/system/catalogue.service
 
 echo -e "\e[32m<<<<<<<<<<<<<< start catalogue service >>>>>>>>>>>>>\e[0m"
 systemctl daemon-reload
@@ -36,7 +36,7 @@ systemctl enable catalogue
 systemctl restart catalogue
 
 echo -e "\e[32m<<<<<<<<<<<<< copy mongo repos >>>>>>>>>>>\e[0m"
-cp $script_path/mongo.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[32m<<<<<<<<<<< install mongodb >>>>>>>>>>>>>\e[0m"
 yum install mongodb-org-shell -y

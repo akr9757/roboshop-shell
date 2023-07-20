@@ -28,13 +28,13 @@ echo -e "\e[32m<<<<<<<<<<< install dependencies >>>>>>>>>>>>>\e[0m"
 npm install
 
 echo -e "\e[32m<<<<<<<<<<< copy user service >>>>>>>>>>>>\e[0m"
-cp $script_path/user.service /etc/systemd/system/user.service
+cp ${script_path}/user.service /etc/systemd/system/user.service
 systemctl daemon-reload
 systemctl enable user
 systemctl restart user
 
 echo -e "\e[32m<<<<<<<<<<<< copy mongo repos >>>>>>>>>\e[0m"
-cp $script_path/mongo.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[32m<<<<<<<<<<<< install mongodb >>>>>>>>>>\e[0m"
 yum install mongodb-org-shell -y
