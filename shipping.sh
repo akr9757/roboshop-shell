@@ -1,8 +1,7 @@
 script=$(realpath $0)
 script_path=$(dirname $script)
 source ${script_path}/common.sh
-echo ${script_path}
-exit
+
 echo -e "\e[32m<<<<<<<<<<<<< install maven >>>>>>>>>>\e[0m"
 yum install maven -y
 
@@ -34,4 +33,4 @@ echo -e "\e[32m<<<<<<<<<< install mysql >>>>>>>>\e[0m"
 yum install mysql -y
 
 echo -e "\e[32m<<<<<<<<<<<<< load mysql schema >>>>>>>>>>>>>\e[0m"
-mysql -h mysql-dev.akrdevopsb72.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql-dev.akrdevopsb72.online -uroot -p${} < /app/schema/shipping.sql
