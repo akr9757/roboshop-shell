@@ -13,7 +13,7 @@ echo -e "\e[32m<<<<<<<<<<< install redis >>>>>>>>>>>\e[0m"
 yum install redis -y
 
 echo -e "\e[32m<<<<<<<<<<<<< update liten address >>>>>>>>>>>\e[0m"
-sed -i -e 's|127.0.0.0|0.0.0.0|' /etc/redis.conf /etc/redis/redis.conf
+sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/redis.conf /etc/redis/redis.conf
 
 
 echo -e "\e[32m<<<<<<<<<<< start redis >>>>>>>>>>>\e[0m"
