@@ -19,7 +19,6 @@ cd /app
 
 echo -e "\e[32m<<<<<<<<<<<<<< unzip app content >>>>>>>>>>>>\e[0m"
 unzip /tmp/shipping.zip
-cd /app
 
 echo -e "\e[32m<<<<<<<<<<<<< install dependencies >>>>>>>>>>>>\e[0m"
 mvn clean package
@@ -36,4 +35,3 @@ yum install mysql -y
 
 echo -e "\e[32m<<<<<<<<<<<<< load mysql schema >>>>>>>>>>>>>\e[0m"
 mysql -h mysql-dev.akrdevopsb72.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql
-systemctl restart shipping
