@@ -1,8 +1,12 @@
+echo dirname $o
+exit
+script_path=$(dirname $0)
+
 source common.sh
 
-dirname $0
+
 echo ${app_user}
-exit
+
 
 echo -e "\e[32m<<<<<<<<<<<<< install maven >>>>>>>>>>\e[0m"
 yum install maven -y
