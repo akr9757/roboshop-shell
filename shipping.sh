@@ -1,8 +1,10 @@
+source common.sh
+
 dirname $0
 exit
+
 script_path=$(dirname $0)
 
-source common.sh
 
 
 echo ${app_user}
