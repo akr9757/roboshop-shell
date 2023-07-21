@@ -22,13 +22,14 @@ cd /app
 
 echo -e "\e[32m<<<<<<<<<<< unzip app content >>>>>>>>>\e[0m"
 unzip /tmp/user.zip
-cd /app
 
 echo -e "\e[32m<<<<<<<<<<< install dependencies >>>>>>>>>>>>>\e[0m"
 npm install
 
 echo -e "\e[32m<<<<<<<<<<< copy user service >>>>>>>>>>>>\e[0m"
 cp ${script_path}/user.service /etc/systemd/system/user.service
+
+echo -e "\e[32m<<<<<<<<<<< start user servicve >>>>>>>>>>>>>>\e[0m"
 systemctl daemon-reload
 systemctl enable user
 systemctl restart user
