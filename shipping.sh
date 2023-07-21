@@ -1,7 +1,7 @@
-dirname $0
-exit
 source common.sh
 
+dirname $0
+exit
 
 echo -e "\e[32m<<<<<<<<<<<<< install maven >>>>>>>>>>\e[0m"
 yum install maven -y
