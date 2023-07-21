@@ -21,7 +21,6 @@ cd /app
 
 echo -e "\e[32m<<<<<<<<<<<<< unzip app content >>>>>>>>>>\e[0m"
 unzip /tmp/cart.zip
-cd /app
 
 echo -e "\e[32m<<<<<<<<<<<<< install dependencies >>>>>>>>>>>>\e[0m"
 cd /app
@@ -29,6 +28,8 @@ npm install
 
 echo -e "\e[32m<<<<<<<<<<<< copy cart service >>>>>>>>>>>\e[0m"
 cp ${script_path}/cart.service /etc/systemd/system/cart.service
+
+echo -e "\e[32m<<<<<<<<<<<<<< start user service >>>>>>>>>\e[0m"
 systemctl daemon-reload
 systemctl enable cart
 systemctl restart cart
