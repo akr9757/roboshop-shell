@@ -1,6 +1,8 @@
-source common.sh
 pwd
 exit
+
+source common.sh
+
 
 echo -e "\e[32m<<<<<<<<<<<<< install maven >>>>>>>>>>\e[0m"
 yum install maven -y
