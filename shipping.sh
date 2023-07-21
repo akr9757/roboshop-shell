@@ -1,4 +1,4 @@
-dirname $o
+dirname $0
 exit
 script_path=$(dirname $0)
 
