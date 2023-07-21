@@ -1,6 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+dispatch_user_password=$1
 
 echo -e "\e[32m<<<<<<<<<<< install golang >>>>>>>>>>\e[0m"
 yum install golang -y
@@ -26,6 +27,7 @@ go get
 go build
 
 echo -e "\e[32m<<<<<<<<<<<<<<< copy dispatch service >>>>>>>>>>>>\e[0m"
+sed -i -e 's|dispatch_user_password|${dispatch_user_password}|' ${script_path}/dispatch.service
 cp ${script_path}/dispatch.service /etc/systemd/system/dispatch.service
 systemctl daemon-reload
 
