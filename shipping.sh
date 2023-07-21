@@ -1,4 +1,5 @@
-source common,sh
+script=$(realpath $0)
+real_path=$(dirname $script)
 source ${script_path}/common.sh
 echo ${script_path}
 exit
