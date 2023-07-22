@@ -3,11 +3,11 @@ script=$(realpath "$0")
 script_path=$(dirname "$script")
 
 func_print_head() {
-  echo -e '\e[36m>>>>>>>>>> $1 <<<<<<<<<<<\e[0m'
+  echo -e '\e[36m>>>>>>>>>> $* <<<<<<<<<<<\e[0m'
 }
 
 func_nodejs() {
-  func_print_head "download nodejs repos"
+  func_print_head download nodejs repos
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
   func_print_head "install nodejs"
